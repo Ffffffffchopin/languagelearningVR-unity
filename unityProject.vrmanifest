@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.multilinguallearningvr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Git\\MultilingualLearningVR-unity\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\GitHub\\MultilingualLearningVR-unity\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "MultilingualLearningVR [Testing]"
