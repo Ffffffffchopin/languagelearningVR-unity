@@ -1,8 +1,9 @@
 # MultilingualLearningVR-unity
-# VR-STT 기술을 활용한 외국어 학습 시스템
+# VR을 활용한 AI 외국어 학습 시스템
 
-가상현실 속 세계 각국의 다양한 장소에서 객체와 직접 상호작용하면서 상황별 회화를 배웁니다.
-해당 어휘를 직접 듣고 말하며 능동적으로 다국어 학습이 가능한 시공간과 물리적 제약으로부터 자유로운 비대면 교육 서비스입니다.
+시공간적 제약을 뛰어넘어 가상현실 속 객체와 직접 상호작용하면서 외국어를 배웁니다.
+또한, 음성인식 기술(Text to Speech, Speech to Text)을 활용하여 외국어를 직접 듣고 말하며 학습합니다.
+최종적으로 MNIST (필기체 인식) 인공신경망으로 퀴즈풀이가 가능합니다.
 
 ------
 ## 프로젝트 개요
@@ -20,4 +21,4 @@
 | 개발환경(IDE) | Visual Studio 2019 |
 | 개발언어 | C# |
 | 디바이스 | HTC VIVE Cosmos Elite |
-| 기타 | Steam VR, TTS(Kakao API), STT(Cortana API), REST API (Naver API) |
+| 기타 | Steam VR, TTS(Kakao API), STT(Cortana API), MNIST (ML-Agents) |
