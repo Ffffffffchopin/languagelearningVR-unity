@@ -1,4 +1,4 @@
-# MultilingualLearningVR-unity
+# AI Foreign Language Learning System Using VR
 # VR을 활용한 AI 외국어 학습 시스템
 
 ------
