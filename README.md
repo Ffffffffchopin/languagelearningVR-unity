@@ -1,5 +1,5 @@
 # MultilingualLearningVR-unity
-> 이 프로젝트는 TTS, SST, MNIST를 활용한 VR 언어학습 시스템입니다.
+> This project is a VR language learning system using TTS, SST, and MNIST.
 <p>
   <a href="https://github.com/sangwookyoo/" target="_blank"><img src="https://img.shields.io/badge/SangwookYoo-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
   <a href="mailto:tkddnr032@gmail.com" target="_blank"><img src="https://img.shields.io/badge/tkddnr032@gmail.com-EA4335?style=flat-square&logo=Gmail&logoColor=white"/></a>
