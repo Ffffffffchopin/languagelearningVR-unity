@@ -1,29 +1,28 @@
-# AI Foreign Language Learning System Using VR
-# VR을 활용한 AI 외국어 학습 시스템
+# MultilingualLearningVR-unity
+> 이 프로젝트는 TTS, SST, MNIST를 활용한 VR 언어학습 시스템입니다.
+<p>
+  <a href="https://github.com/sangwookyoo/" target="_blank"><img src="https://img.shields.io/badge/SangwookYoo-181717?style=flat-square&logo=GitHub&logoColor=white"/></a>
+  <a href="mailto:tkddnr032@gmail.com" target="_blank"><img src="https://img.shields.io/badge/tkddnr032@gmail.com-EA4335?style=flat-square&logo=Gmail&logoColor=white"/></a>
+  <a><img src="https://img.shields.io/badge/unity3d-2019.3.5-blue?style=flat-square&logo=unity"></a>
+</p>
 
-------
+## ⚙ Development Environment
+ * OS : Windows 10
+ * Tool : Unity 3D 2019.3.5
+ * SDK : Steam VR 1.13.10
+ * API : TTS(Kakao API), STT(Cortana API), MNIST(ML-Agents)
+ * Framework : Steam VR 2.6.0b4
+ * Device : HTC VIVE Cosmos Elite
 
-시공간적 제약을 뛰어넘어 가상현실 속 객체와 직접 상호작용하면서 외국어를 배웁니다.
-또한, 음성인식 기술(Text to Speech, Speech to Text)을 활용하여 외국어를 직접 듣고 말하며 학습합니다.
-최종적으로 MNIST (필기체 인식) 인공신경망으로 퀴즈풀이가 가능합니다.
+## 🚀 Feature
+ * VR (Virtual Reality)
+ * Text to Speech
+ * Speech to Text
+ * MNIST Dataset (E-MNIST, K49-MNIST)
+ * Handwriting Recognition (English, Japanese)
 
-## 프로젝트 개요
+## ✔ Acknowledgments
+The result of ICT mentoring project conducted through the support of the Ministry of Science and ICT's Information and Communication creative talent development project.
 
-### 프로젝트 기간
-
-* 2021.04.13 ~ 2021.11.30 (7개월 / 진행중)
-
-### 개발환경
-
-| 구분 | 항목 |
-| ------ | ------ |
-| 운영체제 | Windows 10 |
-| 개발도구 | Unity 3D 2019.3.5 |
-| 개발환경(IDE) | Visual Studio 2019 |
-| 개발언어 | C# |
-| 디바이스 | HTC VIVE Cosmos Elite |
-| 기타 | Steam VR, TTS(Kakao API), STT(Cortana API), MNIST (ML-Agents) |
-
-### Acknowledgments
-
-* The result of ICT mentoring project conducted through the support of the Ministry of Science and ICT's Information and Communication creative talent development project.
+## ✔ License
+This project is licensed under the MIT License - See the LICENSE.md file for details
