@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/Intro.unity
     guid: 36406e62dbc47834b82ba8933e59cee2
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Japan.unity
     guid: 0b9cb203face93f4e81354d72c18d19d
   - enabled: 1
     path: Assets/01.Scenes/USA.unity
     guid: f4350684d75e2ab4d9b07f8375e6fad3
+  - enabled: 1
+    path: Assets/01.Scenes/Sushi.unity
+    guid: 1e8458cb7727d284e9a22a9596a24ee3
   m_configObjects: {}

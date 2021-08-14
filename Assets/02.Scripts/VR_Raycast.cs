@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR;
-using Valve.VR.Extras;
+using Valve.VR.Extras; // SteamVR_LaserPointer
 using UnityEngine.EventSystems;
+using HTC.UnityPlugin.Vive; // ViveInputStatic
 
 namespace VR_SH
 {
@@ -55,7 +55,7 @@ namespace VR_SH
             exitHandler.OnPointerExit(new PointerEventData(EventSystem.current));
         }
 
-        //트리커 버튼을 클릭했을경우
+        //트리거 버튼을 클릭했을경우
         void OnPointerClick(object sender, PointerEventArgs e)
         {
             IPointerClickHandler clickHandler = e.target.GetComponent<IPointerClickHandler>();
