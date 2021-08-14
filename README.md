@@ -10,8 +10,9 @@
  * OS : Windows 10
  * Tool : Unity 3D 2019.3.5
  * SDK : Steam VR 1.13.10
- * API : TTS(Kakao API), STT(Cortana API), MNIST(ML-Agents)
+ * API : Kakao API, Cortana API, Tensorflow 2.5.0, Keras 2.4.3
  * Framework : Steam VR 2.6.0b4
+ * DataSet : MNIST (E-MNIST, K49-MNIST)
  * Device : HTC VIVE Cosmos Elite
 
 ## 🚀 Feature
