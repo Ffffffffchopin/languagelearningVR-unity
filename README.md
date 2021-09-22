@@ -9,8 +9,8 @@
 ## ⚙ Development Environment
  * OS : Windows 10
  * Tool : Unity 3D 2019.3.5
- * SDK : Steam VR 1.13.10
- * API : Kakao API, Cortana API, Tensorflow 2.5.0, Keras 2.4.3
+ * SDK : Steam VR 1.13.10, Microsoft Speech Platform
+ * API : REST API, Tensorflow 2.5.0, Keras 2.4.3
  * Framework : Steam VR 2.6.0b4
  * Plugin: ML-Agents 1.0.8
  * DataSet : MNIST (E-MNIST, K49-MNIST)
