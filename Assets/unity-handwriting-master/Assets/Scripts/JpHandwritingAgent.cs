@@ -10,7 +10,7 @@ using UnityEngine.XR;
 /// <summary>
 /// Struct containing info relevant to capture camera placement and orientation for one written character
 /// </summary>
-public struct WritingAreaInfo
+public struct JpWritingAreaInfo
 {
     /// <summary>
     /// size of area encompassing lines to predict
@@ -34,25 +34,12 @@ public struct WritingAreaInfo
 /// Handwriting predictor: captures handwriting image from relevant surface and feeds it to the prediction model
 /// as a RenderTexture. Extends ML-Agents Agent.
 /// </summary>
-public class HandwritingAgent : Agent
+public class JpHandwritingAgent : Agent
 {
     /// <summary>
     /// array with all possible characters, ordered by index in NN model
     /// </summary>
     private readonly char[] allChars =
-    {
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-        'U', 'V', 'W', 'X', 'Y', 'Z',
-
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-        'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-        'u', 'v', 'w', 'x', 'y', 'z',
-    };
-
-    private readonly char[] JallChars =
     {
         'あ','い','う','え','お',
         'か','き','く','け','こ',
@@ -92,7 +79,7 @@ public class HandwritingAgent : Agent
     /// </summary>
     [Tooltip("Should colors be inverted in the camera capture?")]
     public bool invert = true;
-    
+
     /// <summary>
     /// A self-generated ortographic camera used for capturing to Agent's input RenderTexture
     /// </summary>
@@ -123,7 +110,7 @@ public class HandwritingAgent : Agent
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -140,17 +127,17 @@ public class HandwritingAgent : Agent
     /// <summary>
     /// Executes prediction - sets cam to capture correct area and calls RequestDecision()
     /// </summary>
-    /// <param name="writingAreaInfo">info of the current area to capture</param>
-    public void Predict(WritingAreaInfo writingAreaInfo)
+    /// <param name="writingAreaInfo1">info of the current area to capture</param>
+    public void Predict(JpWritingAreaInfo writingAreaInfo1)
     {
         //moves and sets camera size according to passed info struct
-        _agentCam.transform.position = writingAreaInfo.center - writingAreaInfo.normal;
-        _agentCam.transform.rotation = Quaternion.LookRotation(writingAreaInfo.normal,
-            writingAreaInfo.upNormal);
-        _agentCam.orthographicSize = writingAreaInfo.size;
-        
+        _agentCam.transform.position = writingAreaInfo1.center - writingAreaInfo1.normal;
+        _agentCam.transform.rotation = Quaternion.LookRotation(writingAreaInfo1.normal,
+            writingAreaInfo1.upNormal);
+        _agentCam.orthographicSize = writingAreaInfo1.size;
+
         _agentCam.Render(); //make sure the camera renders updated view
-        
+
         RequestDecision();
     }
 
@@ -160,7 +147,7 @@ public class HandwritingAgent : Agent
     public override void InitializeAgent()
     {
         base.InitializeAgent();
-        
+
         //create prediction camera and set up properties
         GameObject cameraGO = new GameObject("Agent Camera");
         _agentCam = cameraGO.AddComponent<Camera>();
@@ -171,9 +158,9 @@ public class HandwritingAgent : Agent
         _agentCam.clearFlags = CameraClearFlags.Color; //camera only renders text lines
 
         //create target render texture. Dimension is 28x28
-        RenderTexture rt = new RenderTexture(28,28,3);
+        RenderTexture rt = new RenderTexture(28, 28, 3);
         _agentCam.targetTexture = rt;
-        agentParameters.agentRenderTextures = new List<RenderTexture>(new RenderTexture[]{rt}); //assign to agent parameter
+        agentParameters.agentRenderTextures = new List<RenderTexture>(new RenderTexture[] { rt }); //assign to agent parameter
     }
 
     /// <summary>
@@ -186,15 +173,15 @@ public class HandwritingAgent : Agent
         int indexAtMax = vectorAction.ToList().IndexOf(vectorAction.Max()); //get index of max value
         //vectorAction contains the confidence values of all possible characters - 62 in total.
         string arrStr = "";
-        
+
         //debugs
         for (int i = 0; i < vectorAction.Length; i++)
         {
             arrStr += $"{allChars[i]} {vectorAction[i]:.0000}\n";
         }
-        Debug.Log(gameObject.name+" confidence values:\n"+arrStr);
+        Debug.Log(gameObject.name + " confidence values:\n" + arrStr);
         Debug.Log($"{gameObject.name} prediction result: {allChars[indexAtMax]} {vectorAction[indexAtMax]}");
-        
+
         _lastPredict = allChars[indexAtMax]; //get character with highest confidence
         _lastConfidence = vectorAction[indexAtMax];
         parsedText += _lastPredict;
