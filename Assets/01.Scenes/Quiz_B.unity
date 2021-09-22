@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 50ed1a12f63c918419e8ef3726015c64,
+  m_LightingDataAsset: {fileID: 112000000, guid: 4f4444a3f69517d40b5084e7397ea6c1,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &5
@@ -3698,7 +3698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &849452703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5021,7 +5021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1381157058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5990,7 +5990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1640210190
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7253,7 +7253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2099751762
 MonoBehaviour:
   m_ObjectHideFlags: 0
