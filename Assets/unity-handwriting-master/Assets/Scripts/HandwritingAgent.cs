@@ -36,9 +36,11 @@ public struct WritingAreaInfo
 /// </summary>
 public class HandwritingAgent : Agent
 {
+    public GameObject isJp;
     /// <summary>
     /// array with all possible characters, ordered by index in NN model
     /// </summary>
+
     private readonly char[] allChars =
     {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -49,10 +51,10 @@ public class HandwritingAgent : Agent
 
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-        'u', 'v', 'w', 'x', 'y', 'z',
+        'u', 'v', 'w', 'x', 'y', 'z'
     };
 
-    private readonly char[] JallChars =
+    private readonly char[] JpallChars =
     {
         'あ','い','う','え','お',
         'か','き','く','け','こ',
@@ -186,18 +188,36 @@ public class HandwritingAgent : Agent
         int indexAtMax = vectorAction.ToList().IndexOf(vectorAction.Max()); //get index of max value
         //vectorAction contains the confidence values of all possible characters - 62 in total.
         string arrStr = "";
-        
+
         //debugs
-        for (int i = 0; i < vectorAction.Length; i++)
+        if (isJp.activeSelf == false)
         {
-            arrStr += $"{allChars[i]} {vectorAction[i]:.0000}\n";
+            for (int i = 0; i < vectorAction.Length; i++)
+            {
+                arrStr += $"{allChars[i]} {vectorAction[i]:.0000}\n";
+            }
+            Debug.Log(gameObject.name + " confidence values:\n" + arrStr);
+            Debug.Log($"{gameObject.name} prediction result: {allChars[indexAtMax]} {vectorAction[indexAtMax]}");
+
+            _lastPredict = allChars[indexAtMax]; //get character with highest confidence
+            _lastConfidence = vectorAction[indexAtMax];
+            parsedText += _lastPredict;
+            if (textMesh) textMesh.text = parsedText;
         }
-        Debug.Log(gameObject.name+" confidence values:\n"+arrStr);
-        Debug.Log($"{gameObject.name} prediction result: {allChars[indexAtMax]} {vectorAction[indexAtMax]}");
-        
-        _lastPredict = allChars[indexAtMax]; //get character with highest confidence
-        _lastConfidence = vectorAction[indexAtMax];
-        parsedText += _lastPredict;
-        if (textMesh) textMesh.text = parsedText;
+        else if(isJp.activeSelf == true)
+        {
+            for (int i = 0; i < vectorAction.Length; i++)
+            {
+                arrStr += $"{JpallChars[i]} {vectorAction[i]:.0000}\n";
+            }
+            Debug.Log(gameObject.name + " confidence values:\n" + arrStr);
+            Debug.Log($"{gameObject.name} prediction result: {JpallChars[indexAtMax]} {vectorAction[indexAtMax]}");
+
+            _lastPredict = JpallChars[indexAtMax]; //get character with highest confidence
+            _lastConfidence = vectorAction[indexAtMax];
+            parsedText += _lastPredict;
+            if (textMesh) textMesh.text = parsedText;
+        }
     }
+   
 }
