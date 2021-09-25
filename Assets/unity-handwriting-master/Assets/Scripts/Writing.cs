@@ -47,7 +47,7 @@ public class Writing : MonoBehaviour
     /// <summary>
     /// Parent of created line renderers. Auto generated
     /// </summary>
-    protected Transform _lineParent;
+    public Transform _lineParent;
     /// <summary>
     /// The prediction agent attached to this component
     /// </summary>
@@ -55,11 +55,11 @@ public class Writing : MonoBehaviour
     /// <summary>
     /// Last time an auto prediction was made
     /// </summary>
-    protected float _lastPredict;
+    public float _lastPredict;
     /// <summary>
     /// Last child index of LineRenderer included in previous prediction
     /// </summary>
-    protected int _lastPredictIdx;
+    public int _lastPredictIdx;
     
     // Start is called before the first frame update
     protected virtual void Start()

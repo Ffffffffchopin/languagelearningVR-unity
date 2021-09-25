@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MLAgents;
 using System.Linq;
+using UnityEngine.UI;
 using UnityEngine.Serialization;
 using UnityEngine.XR;
 
@@ -88,7 +89,7 @@ public class HandwritingAgent : Agent
     /// Text 3D component used to display parsed text in game
     /// </summary>
     [Tooltip("Text 3D component used to display parsed text in game")]
-    public TextMesh textMesh;
+    public Text textMesh;
     /// <summary>
     /// Should colors be inverted in the camera capture?
     /// </summary>
