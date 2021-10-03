@@ -13,6 +13,9 @@ public class Button : MonoBehaviour
     public Text korea;
     public GameObject closeButton;
     public GameObject thisButton;
+    public GameObject diaBar;
+    public GameObject sushi;
+    public GameObject okane;
     private Dialog[] dialogs;
     void Start()
     {
@@ -25,15 +28,29 @@ public class Button : MonoBehaviour
     // Start is called before the first frame update
     public void nextButton()
     {
-        if (now != endScript - 1)
+        Debug.Log(now);
+        
+        if (now == endScript - 1)
         {
+            close();
+        }
+        else
+        {
+            Debug.Log(now);
+            if (now == 4)
+            {
+                sushiShow();
+            }
+            if (now == 7)
+            {
+                okaneShow();
+            }
             PlayTTS.LINK = dialogs[now].original;
             origin.text = dialogs[now].original;
             read.text = dialogs[now].read;
             korea.text = dialogs[now].korean;
             now++;
         }
-        else close();
     }
 
     // Update is called once per frame
@@ -41,5 +58,15 @@ public class Button : MonoBehaviour
     {
         closeButton.SetActive(true);
         thisButton.SetActive(false);
+    }
+    public void sushiShow()
+    {
+        sushi.SetActive(true);
+        diaBar.SetActive(false);
+    }
+    public void okaneShow()
+    {
+        okane.SetActive(true);
+        diaBar.SetActive(false);
     }
 }

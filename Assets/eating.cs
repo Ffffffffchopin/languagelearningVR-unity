@@ -13,6 +13,7 @@ public class eating : MonoBehaviour
         //Debug.Log(transform.position.z);
         if (transform.position.z > -4.2) 
         {
+            afterEat.sushiCount++;
             Destroy(sushi);
         }
     }

@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UI
+  - projectile
+  - FxTemporaire
+  - okane_interaction
   layers:
   - Default
   - TransparentFX
