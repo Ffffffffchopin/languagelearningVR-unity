@@ -15,7 +15,7 @@ public class Submit : MonoBehaviour
     
     public void submit()
     {
-        if (answer.text == "すみません")
+        if (answer.text == "いくら")
         {
             X.SetActive(false);
             O.SetActive(true);

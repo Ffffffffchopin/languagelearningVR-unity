@@ -10,9 +10,10 @@ public class afterEat : MonoBehaviour
 
     private void Update()
     {
-        if(sushiCount==4)
+        if(sushiCount==1)
         {
-            showBar();      
+            showBar();
+            sushiCount = 0;
         }
     }
 
