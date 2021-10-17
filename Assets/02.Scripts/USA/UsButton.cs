@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Button : MonoBehaviour
+public class UsButton : MonoBehaviour
 {
     int now = 0;
     public int endScript;
@@ -15,7 +15,8 @@ public class Button : MonoBehaviour
     public GameObject prevButton;
     public GameObject thisButton;
     public GameObject diaBar;
-    public GameObject sushi;
+    public GameObject bag;
+    public GameObject part;
     public GameObject okane;
     private Dialog[] dialogs;
     void Start()
@@ -38,14 +39,11 @@ public class Button : MonoBehaviour
         else
         {
             Debug.Log(now);
-            if (now == 4)
-            {
-                sushiShow();
-            }
-            if (now == 7)
+            if (now == 5)
             {
                 okaneShow();
             }
+
             PlayTTS.LINK = dialogs[now].original;
             origin.text = dialogs[now].original;
             read.text = dialogs[now].read;
@@ -74,15 +72,13 @@ public class Button : MonoBehaviour
         closeButton.SetActive(true);
         prevButton.SetActive(false);
         thisButton.SetActive(false);
+        bag.SetActive(true);
     }
-    public void sushiShow()
-    {
-        sushi.SetActive(true);
-        diaBar.SetActive(false);
-    }
+
     public void okaneShow()
     {
         okane.SetActive(true);
+        part.SetActive(true);
         diaBar.SetActive(false);
     }
 }

@@ -11,11 +11,28 @@ public class Submit : MonoBehaviour
     public GameObject O;
     public GameObject X;
 
-    int timer = 3;
+    int timer = 5;
     
-    public void submit()
+    public void JpSubmit()
     {
         if (answer.text == "いくら")
+        {
+            X.SetActive(false);
+            O.SetActive(true);
+
+            StartCoroutine(NextScene());
+        }
+
+        else
+        {
+            O.SetActive(false);
+            X.SetActive(true);
+        }
+    }
+
+    public void UsSubmit()
+    {
+        if (answer.text == "Bread")
         {
             X.SetActive(false);
             O.SetActive(true);
