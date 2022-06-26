@@ -1,4 +1,4 @@
-# MultilingualLearningVR-unity
+# languagelearningVR-unity
 > This project is a VR language learning system using TTS, SST, and MNIST.
 <p>
   <a><img src="https://img.shields.io/badge/unity3d-2019.3.5-blue?style=flat-square&logo=unity"></a>
