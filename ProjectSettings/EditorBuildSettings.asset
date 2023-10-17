@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/USA.unity
     guid: f4350684d75e2ab4d9b07f8375e6fad3
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/Quiz_A.unity
     guid: 849f4b975a071f44a9b7916adf905eca
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/Japan.unity
     guid: 0b9cb203face93f4e81354d72c18d19d
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/Sushi.unity
     guid: 1e8458cb7727d284e9a22a9596a24ee3
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/Quiz_B.unity
     guid: 30b8577aebbe40d459dd8300034d0e44
   m_configObjects:
