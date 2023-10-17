@@ -10,6 +10,9 @@ public class ButtonSceneManager : MonoBehaviour
     public string sceneName;
     DictationRecognizer dictationRecognizer;
     public RegistryKey rkey = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Speech_OneCore\Settings\SpeechRecognizer", true);
+
+
+
     public void UsOnButtonClick()
     {
         rkey.SetValue("RecognizedLanguage", "en-us");
@@ -21,5 +24,9 @@ public class ButtonSceneManager : MonoBehaviour
         rkey.SetValue("RecognizedLanguage", "ja");
         SceneManager.LoadSceneAsync(sceneName);
         Debug.Log(sceneName + "로 이동합니다.");
+        
     }
+ 
+
+
 }
